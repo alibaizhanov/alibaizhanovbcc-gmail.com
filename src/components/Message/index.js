@@ -1,6 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import './Message.scss'
+import PropTypes from 'prop-types';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import ruLocale from 'date-fns/locale/ru';
+
+import './Message.scss';
+
+
 
 const Message = ({avatar,user,text,date}) => (
      <div className = "message">
@@ -10,6 +15,7 @@ const Message = ({avatar,user,text,date}) => (
           <img src = {avatar} alt={`Avatar ${user.fullname}`}/>
 
        </div>
+
        <div className = "message__content">
 
         <div className = "message__bubble">
@@ -17,7 +23,8 @@ const Message = ({avatar,user,text,date}) => (
               <p className= "message__text">{text}</p>
 
         </div>
-        <span className = "message__date"> Вчера, в 12:31</span>
+
+          <span className = "message__date"> {formatDistanceToNow(new Date(date),'ddd/MMM/D/YYYY/hh/m/ss',{includeSeconds:true,addSuffix:true,locale:ruLocale})}</span>
 
        </div>
 
