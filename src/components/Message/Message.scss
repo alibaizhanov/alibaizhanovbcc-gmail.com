@@ -50,6 +50,33 @@
         line-height: 20px;
     }
 
+
+    &__attachments{
+        display: flex;
+        margin-bottom: 5px;
+        &-item{
+            margin-right: 5px;
+            cursor: pointer;
+            img{
+                width: 45;
+                height: 45px;
+                border-radius: 9px;
+            }
+        }
+    }
+
+    &__icon-readed{
+        
+        position: absolute;
+        bottom: 21px;
+        left:-25px;
+
+        &--no{
+            left:-22px;
+        }
+
+    }
+
     &--isme {
         display: flex;
         flex-direction: row-reverse;
@@ -75,7 +102,7 @@
         #{$self}__date {
           display: flex;
           text-align: left;
-          margin-left: 310px;
+          margin-left: 300px;
         }
     
         #{$self}__bubble {
